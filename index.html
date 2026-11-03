@@ -4,24 +4,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rahul Selvam | Founder & Technology Entrepreneur</title>
-
-<meta name="description" content="Official website of Rahul Selvam, founder of LearnSphere and Nexus Studio. Computer Science student and aspiring technology entrepreneur.">
 <meta name="theme-color" content="#080b18">
 
-<style>
-:root {
-  --bg: #080b18;
-  --surface: #11172b;
-  --surface2: #171d35;
-  --primary: #a78bfa;
-  --secondary: #c4b5fd;
-  --text: #f5f5ff;
-  --muted: #aeb5cf;
-  --border: #29314e;
-}
+<title>Rahul Selvam | Founder & Technology Builder</title>
 
+<meta name="description" content="Official portfolio of Rahul Selvam, founder building LearnSphere and Nexus Studio.">
+
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -35,10 +24,9 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: #080b18;
+  color: #f5f5ff;
   line-height: 1.7;
-  overflow-x: hidden;
 }
 
 a {
@@ -47,7 +35,7 @@ a {
 }
 
 .container {
-  width: 84%;
+  width: 86%;
   max-width: 1150px;
   margin: auto;
 }
@@ -58,57 +46,56 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(8,11,24,.94);
+  background: rgba(8,11,24,.95);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #29314e;
 }
 
 .nav-inner {
   width: 88%;
   max-width: 1250px;
-  margin: auto;
   min-height: 75px;
+  margin: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
 
 .logo {
-  font-size: 22px;
+  color: #a78bfa;
+  font-size: 21px;
   font-weight: 800;
   letter-spacing: 1px;
-  color: var(--primary);
 }
 
 .nav-links {
   display: flex;
-  gap: 27px;
-  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
-  color: var(--muted);
+  color: #aeb5cf;
   font-size: 14px;
   transition: .3s;
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  color: #c4b5fd;
 }
 
 /* HERO */
 
 .hero {
-  min-height: 88vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 90px 20px;
+  padding: 80px 20px;
   background:
-    radial-gradient(ellipse at 50% 30%, #422276 0%, #17152f 35%, #080b18 75%);
-  position: relative;
+    radial-gradient(ellipse at 50% 25%, #422276 0%, #17152f 40%, #080b18 78%);
 }
 
 .hero-content {
@@ -116,20 +103,31 @@ nav {
   animation: appear 1s ease;
 }
 
+.profile-photo {
+  width: 165px;
+  height: 165px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
+  border: 4px solid #a78bfa;
+  box-shadow: 0 0 35px #a78bfa66;
+  margin-bottom: 25px;
+}
+
 .tag {
   display: inline-block;
-  padding: 8px 19px;
+  padding: 8px 18px;
   border: 1px solid #7560b5;
   border-radius: 30px;
-  color: var(--secondary);
+  color: #c4b5fd;
   font-size: 12px;
   letter-spacing: 2px;
 }
 
 .hero h1 {
-  font-size: clamp(45px, 8vw, 82px);
-  line-height: 1.1;
-  margin: 28px 0;
+  font-size: clamp(43px, 8vw, 78px);
+  line-height: 1.12;
+  margin: 25px 0;
   letter-spacing: -2px;
 }
 
@@ -141,18 +139,18 @@ nav {
 }
 
 .hero p {
-  max-width: 690px;
+  max-width: 680px;
   margin: auto;
   color: #c6c9dc;
   font-size: 18px;
 }
 
 .buttons {
-  margin-top: 32px;
   display: flex;
   justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .btn {
@@ -175,25 +173,24 @@ nav {
   border: 1px solid #8b78c8;
 }
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 
 section {
-  padding: 90px 0;
+  padding: 85px 0;
 }
 
 .section-title {
   font-size: clamp(30px,5vw,42px);
-  margin-bottom: 14px;
-}
-
-.section-subtitle {
-  color: var(--muted);
-  max-width: 700px;
-  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 .purple {
-  color: var(--primary);
+  color: #a78bfa;
+}
+
+.section-subtitle {
+  max-width: 720px;
+  color: #aeb5cf;
 }
 
 /* ABOUT */
@@ -202,50 +199,48 @@ section {
   display: grid;
   grid-template-columns: 1.3fr .7fr;
   gap: 35px;
-  align-items: center;
   margin-top: 30px;
+  align-items: center;
 }
 
 .about-text p {
-  color: var(--muted);
-  margin-top: 15px;
+  color: #aeb5cf;
+  margin-bottom: 17px;
 }
 
 .about-box {
   padding: 30px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: #11172b;
+  border: 1px solid #29314e;
   border-radius: 18px;
 }
 
 .about-box h3 {
-  color: var(--secondary);
+  color: #c4b5fd;
   margin-bottom: 12px;
 }
 
 .about-box p {
-  color: var(--muted);
+  color: #aeb5cf;
 }
-
-/* SKILLS */
 
 .skills {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 25px;
 }
 
 .skills span {
+  padding: 9px 16px;
   background: #17172f;
   border: 1px solid #514579;
-  color: #d7caff;
-  padding: 9px 17px;
   border-radius: 30px;
+  color: #d7caff;
   font-size: 14px;
 }
 
-/* BRANDS */
+/* BRAND AND PROJECT CARDS */
 
 .dark-section {
   background: #0d1122;
@@ -259,50 +254,44 @@ section {
 }
 
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
   padding: 30px;
+  background: #11172b;
+  border: 1px solid #29314e;
+  border-radius: 18px;
   transition: .3s;
 }
 
 .card:hover {
   transform: translateY(-7px);
-  border-color: var(--primary);
+  border-color: #a78bfa;
   box-shadow: 0 15px 40px #0004;
 }
 
 .card-icon {
-  font-size: 34px;
-  margin-bottom: 17px;
+  font-size: 35px;
+  margin-bottom: 15px;
 }
 
 .card h3 {
   font-size: 23px;
-  color: var(--secondary);
+  color: #c4b5fd;
   margin-bottom: 12px;
 }
 
 .card p {
-  color: var(--muted);
+  color: #aeb5cf;
   font-size: 15px;
 }
 
 .card-label {
   display: inline-block;
   margin-top: 20px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #c4b5fd;
+  padding: 5px 12px;
   border: 1px solid #514579;
   border-radius: 20px;
-  padding: 5px 12px;
-}
-
-/* PROJECTS */
-
-.project-card {
-  min-height: 210px;
+  color: #c4b5fd;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
 /* VISION */
@@ -332,36 +321,37 @@ section {
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
   margin-top: 30px;
 }
 
 .social-links a {
-  padding: 11px 19px;
-  border: 1px solid var(--border);
+  padding: 12px 20px;
+  border: 1px solid #29314e;
   border-radius: 9px;
-  color: var(--secondary);
+  color: #c4b5fd;
   transition: .3s;
 }
 
 .social-links a:hover {
-  background: var(--surface2);
-  border-color: var(--primary);
+  background: #171d35;
+  border-color: #a78bfa;
+  transform: translateY(-3px);
 }
 
 /* FOOTER */
 
 footer {
-  border-top: 1px solid var(--border);
-  padding: 27px 15px;
+  padding: 28px 15px;
   text-align: center;
+  border-top: 1px solid #29314e;
   color: #929bb7;
   font-size: 13px;
 }
 
 footer span {
-  color: var(--primary);
+  color: #a78bfa;
 }
 
 /* ANIMATION */
@@ -377,7 +367,7 @@ footer span {
   }
 }
 
-/* MOBILE */
+/* MOBILE RESPONSIVE */
 
 @media(max-width:750px) {
   .nav-inner {
@@ -386,9 +376,8 @@ footer span {
   }
 
   .nav-links {
-    gap: 15px;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 13px;
   }
 
   .nav-links a {
@@ -408,7 +397,7 @@ footer span {
   }
 
   .hero {
-    min-height: 75vh;
+    min-height: 80vh;
   }
 }
 </style>
@@ -432,12 +421,22 @@ footer span {
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO / HOME -->
 
 <header class="hero" id="home">
   <div class="hero-content">
 
-    <span class="tag">STUDENT ENTREPRENEUR · TECHNOLOGY BUILDER</span>
+    <img
+      src="rahul-profile.jpg"
+      alt="Rahul Selvam - Founder"
+      class="profile-photo"
+    >
+
+    <br>
+
+    <span class="tag">
+      STUDENT ENTREPRENEUR · TECHNOLOGY BUILDER
+    </span>
 
     <h1>
       Building Ideas<br>
@@ -458,27 +457,29 @@ footer span {
   </div>
 </header>
 
-<!-- ABOUT -->
+<!-- ABOUT ME -->
 
 <section id="about">
   <div class="container">
 
-    <h2 class="section-title">About <span class="purple">Me</span></h2>
+    <h2 class="section-title">
+      About <span class="purple">Me</span>
+    </h2>
 
     <div class="about-grid">
 
       <div class="about-text">
         <p>
-          I'm Rahul Selvam, a Computer Science student with an
-          interest in technology, programming, software development
-          and entrepreneurship.
+          I'm Rahul Selvam, a Computer Science student
+          passionate about technology, programming,
+          software development and entrepreneurship.
         </p>
 
         <p>
-          I believe every meaningful digital product begins with an
-          idea, curiosity and the willingness to learn. I'm working
-          towards turning ideas into practical technology products
-          that can create value for people.
+          I believe every meaningful digital product begins
+          with an idea, curiosity and the willingness to learn.
+          I'm working towards turning ideas into practical
+          technology products that create value for people.
         </p>
 
         <p>
@@ -498,7 +499,7 @@ footer span {
 
     </div>
 
-    <h3 style="margin-top:45px">Technical Interests</h3>
+    <h3 style="margin-top:40px">Technical Interests</h3>
 
     <div class="skills">
       <span>Python</span>
@@ -515,15 +516,17 @@ footer span {
   </div>
 </section>
 
-<!-- BRANDS -->
+<!-- MY BRANDS -->
 
 <section class="dark-section" id="brands">
   <div class="container">
 
-    <h2 class="section-title">My <span class="purple">Brands</span></h2>
+    <h2 class="section-title">
+      My <span class="purple">Brands</span>
+    </h2>
 
     <p class="section-subtitle">
-      Building ideas with a vision to create useful digital
+      Two ideas. One vision — creating useful digital
       experiences through education and technology.
     </p>
 
@@ -536,11 +539,13 @@ footer span {
 
         <p>
           An educational technology platform in development,
-          focused on making learning more accessible, engaging
-          and effective for students.
+          focused on making learning more accessible,
+          engaging and effective for students.
         </p>
 
-        <span class="card-label">EDTECH · IN DEVELOPMENT</span>
+        <span class="card-label">
+          EDTECH · IN DEVELOPMENT
+        </span>
       </article>
 
       <article class="card">
@@ -550,52 +555,57 @@ footer span {
 
         <p>
           A software and app development studio in development,
-          exploring creative ideas, digital products and
-          innovative technology solutions.
+          exploring creative ideas, digital products
+          and innovative technology solutions.
         </p>
 
-        <span class="card-label">SOFTWARE · IN DEVELOPMENT</span>
+        <span class="card-label">
+          SOFTWARE · IN DEVELOPMENT
+        </span>
       </article>
 
     </div>
+
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- MY PROJECTS -->
 
 <section id="projects">
   <div class="container">
 
-    <h2 class="section-title">My <span class="purple">Projects</span></h2>
+    <h2 class="section-title">
+      My <span class="purple">Projects</span>
+    </h2>
 
     <p class="section-subtitle">
-      Exploring technology by learning, experimenting and
-      building practical digital projects.
+      Exploring technology through practical projects,
+      experimentation and continuous learning.
     </p>
 
     <div class="cards">
 
-      <article class="card project-card">
+      <article class="card">
         <div class="card-icon">📱</div>
         <h3>StudentHub</h3>
         <p>
           A student-focused Android application project
-          exploring digital study support and AI-powered
-          learning assistance.
+          exploring digital study support and
+          AI-powered learning assistance.
         </p>
       </article>
 
-      <article class="card project-card">
+      <article class="card">
         <div class="card-icon">🤖</div>
         <h3>AI Learning Tools</h3>
         <p>
-          Exploring artificial intelligence features that
-          can help students understand concepts and learn
-          more effectively.
+          Exploring artificial intelligence features
+          that can help students understand concepts
+          and learn effectively.
         </p>
       </article>
 
-      <article class="card project-card">
+      <article class="card">
         <div class="card-icon">🌐</div>
         <h3>Web Development</h3>
         <p>
@@ -609,17 +619,20 @@ footer span {
   </div>
 </section>
 
-<!-- VISION -->
+<!-- MY VISION -->
 
 <section class="vision">
   <div class="container">
 
-    <h2 class="section-title">My <span class="purple">Vision</span></h2>
+    <h2 class="section-title">
+      My <span class="purple">Vision</span>
+    </h2>
 
     <p>
-      To combine technology, creativity and continuous learning
-      to build meaningful digital products, support students
-      and explore solutions to real-world problems.
+      To combine technology, creativity and continuous
+      learning to build meaningful digital products,
+      support students and explore solutions to
+      real-world problems.
     </p>
 
   </div>
@@ -630,28 +643,35 @@ footer span {
 <section class="contact" id="contact">
   <div class="container">
 
-    <h2 class="section-title">Let's <span class="purple">Connect</span></h2>
+    <h2 class="section-title">
+      Let's <span class="purple">Connect</span>
+    </h2>
 
     <p class="section-subtitle">
-      Interested in technology, educational innovation or
-      creative digital ideas? Find me through my platforms.
+      Interested in technology, educational innovation
+      or creative digital ideas? Connect with me.
     </p>
 
     <div class="social-links">
 
-      <a href="https://github.com/rahulselvam83-collab"
-         target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://github.com/rahulselvam83-collab"
+        target="_blank"
+        rel="noopener noreferrer">
         GitHub ↗
       </a>
 
-      <!-- Replace these links with your real profile URLs -->
-      <a href="https://www.linkedin.com/"
-         target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.linkedin.com/in/rahul-selvam-aa23b23a5/"
+        target="_blank"
+        rel="noopener noreferrer">
         LinkedIn ↗
       </a>
 
-      <a href="https://www.instagram.com/"
-         target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.instagram.com/_x__eclipwze__x_/"
+        target="_blank"
+        rel="noopener noreferrer">
         Instagram ↗
       </a>
 
@@ -663,7 +683,9 @@ footer span {
 <!-- FOOTER -->
 
 <footer>
-  <p>© 2026 <span>Rahul Selvam</span>. All rights reserved.</p>
+  <p>
+    © 2026 <span>Rahul Selvam</span>. All rights reserved.
+  </p>
   <p>Building Ideas Into Technology.</p>
 </footer>
 
