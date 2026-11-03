@@ -2,593 +2,649 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090d18">
-  <meta name="description" content="NEXUS Studio — a student-led development team building meaningful technology.">
-  <title>NEXUS Studio — Meaningful Technology</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NEXUS Studio — Student-led app development, digital experiences and creative technology.">
+<title>NEXUS Studio | Meaningful Technology</title>
 
-  <link rel="icon" type="image/svg+xml" href="assets/nexus-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #090a0d;
+  --surface: #111318;
+  --surface2: #171a20;
+  --gold: #d7b66b;
+  --gold-light: #f0d99c;
+  --white: #f5f3ee;
+  --muted: #a1a3aa;
+  --border: rgba(255,255,255,.10);
+}
 
-  <link rel="stylesheet" href="styles.css">
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.7;
+}
+a { color:inherit; text-decoration:none; }
+.container { width:min(1120px,90%); margin:auto; }
+
+/* NAVIGATION */
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(9,10,13,.90);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav {
+  min-height:76px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.logo {
+  font-family:'Manrope',sans-serif;
+  font-size:21px;
+  font-weight:800;
+  letter-spacing:3px;
+}
+.logo span { color:var(--gold); }
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.nav-links a {
+  color:var(--muted);
+  font-size:13px;
+  transition:.3s;
+}
+.nav-links a:hover { color:var(--gold); }
+.menu-btn {
+  display:none;
+  background:none;
+  color:white;
+  border:1px solid var(--border);
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:20px;
+}
+
+/* HERO */
+.hero {
+  min-height:680px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding:100px 0;
+}
+.hero::before {
+  content:"";
+  position:absolute;
+  width:550px;
+  height:550px;
+  right:-120px;
+  top:30px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(215,182,107,.14),transparent 68%);
+  pointer-events:none;
+}
+.eyebrow {
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+.hero h1 {
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(48px,8vw,88px);
+  line-height:1.08;
+  letter-spacing:-4px;
+  max-width:850px;
+}
+.hero h1 span { color:var(--gold); }
+.hero-text {
+  max-width:590px;
+  color:var(--muted);
+  font-size:16px;
+  margin:28px 0 34px;
+}
+.buttons { display:flex; flex-wrap:wrap; gap:14px; }
+.btn {
+  display:inline-block;
+  padding:13px 23px;
+  border-radius:5px;
+  font-size:13px;
+  font-weight:700;
+  transition:.3s;
+}
+.btn-primary { background:var(--gold); color:#111; }
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-3px); }
+.btn-outline { border:1px solid var(--border); }
+.btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+.hero-note {
+  margin-top:75px;
+  color:#747780;
+  font-size:11px;
+  letter-spacing:3px;
+}
+
+/* GENERAL SECTIONS */
+section { padding:105px 0; }
+.section-label {
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:3px;
+  margin-bottom:17px;
+}
+.section-title {
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(32px,5vw,52px);
+  letter-spacing:-2px;
+  line-height:1.2;
+  max-width:700px;
+}
+.section-description {
+  color:var(--muted);
+  max-width:650px;
+  margin-top:20px;
+}
+.divider { border:0; border-top:1px solid var(--border); }
+
+/* ABOUT */
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.about-card {
+  background:linear-gradient(145deg,#191b20,#0d0e12);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:35px;
+}
+.about-card .big {
+  font-family:'Manrope',sans-serif;
+  font-size:36px;
+  line-height:1.25;
+  font-weight:800;
+}
+.about-card .big span { color:var(--gold); }
+.about-card p { color:var(--muted); margin-top:22px; }
+
+/* SERVICES */
+.services-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:45px;
+}
+.service {
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:29px;
+  border-radius:10px;
+  transition:.3s;
+}
+.service:hover {
+  transform:translateY(-6px);
+  border-color:var(--gold);
+}
+.service-number { color:var(--gold); font-size:12px; }
+.service h3 { font-size:19px; margin:18px 0 10px; }
+.service p { color:var(--muted); font-size:13px; }
+
+/* PROJECT */
+.project {
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+}
+.project-art {
+  min-height:330px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at center,#35302a,#15161a 65%);
+  padding:30px;
+}
+.project-art div {
+  width:190px;
+  height:190px;
+  border:1px solid rgba(215,182,107,.5);
+  border-radius:40px;
+  display:grid;
+  place-items:center;
+  font-family:'Manrope',sans-serif;
+  font-size:45px;
+  font-weight:800;
+  color:var(--gold);
+  box-shadow:0 0 70px rgba(215,182,107,.12);
+}
+.project-content { padding:45px; align-self:center; }
+.project-tag {
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:2px;
+}
+.project-content h3 {
+  font-family:'Manrope',sans-serif;
+  font-size:36px;
+  margin:13px 0;
+}
+.project-content p { color:var(--muted); margin-bottom:25px; }
+
+/* PROCESS */
+.process-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.process-item {
+  padding:25px 0;
+  border-top:1px solid var(--gold);
+}
+.process-item span { color:var(--gold); font-size:12px; }
+.process-item h3 { margin:14px 0 8px; }
+.process-item p { color:var(--muted); font-size:13px; }
+
+/* TEAM */
+.team-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.team-card {
+  padding:32px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.team-initial {
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  background:#28241b;
+  color:var(--gold);
+  border-radius:50%;
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:22px;
+}
+.team-card h3 { font-size:22px; }
+.team-card .role { color:var(--gold); font-size:12px; }
+.team-card p { color:var(--muted); font-size:13px; margin-top:14px; }
+
+/* CONTACT */
+.contact {
+  background:linear-gradient(120deg,#17150f,#101115);
+  border:1px solid rgba(215,182,107,.22);
+  border-radius:16px;
+  padding:55px;
+  text-align:center;
+}
+.contact h2 {
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(34px,5vw,55px);
+  line-height:1.2;
+}
+.contact p { color:var(--muted); margin:20px auto 28px; max-width:550px; }
+.contact .email { color:var(--gold); display:block; margin-top:20px; }
+
+/* FOOTER */
+footer {
+  padding:35px 0;
+  border-top:1px solid var(--border);
+  margin-top:90px;
+}
+.footer-content {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+footer p { color:var(--muted); font-size:12px; }
+footer a { color:var(--gold); }
+
+/* ANIMATION */
+.reveal {
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media(max-width:760px) {
+  .menu-btn { display:block; }
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:#101115;
+    padding:25px 5%;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid var(--border);
+  }
+  .nav-links.open { display:flex; }
+  .hero { min-height:570px; }
+  .hero h1 { letter-spacing:-2px; }
+  .about-grid,.project { grid-template-columns:1fr; }
+  .services-grid,.process-grid { grid-template-columns:1fr; }
+  .team-grid { grid-template-columns:1fr; }
+  .project-content { padding:30px; }
+  .contact { padding:35px 20px; }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">NEXUS<span>.</span></a>
 
-  <!-- HEADER -->
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
 
-  <header class="site-header">
-
-    <a class="brand" href="#home" aria-label="NEXUS Studio home">
-      <img src="assets/nexus-mark-crop.jpg" alt="NEXUS logo" class="brand-mark">
-      <span>NEXUS<span class="brand-light">STUDIO</span></span>
-    </a>
-
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="navigation" aria-label="Main navigation">
+    <nav class="nav-links" id="navLinks">
       <a href="#about">About</a>
-      <a href="#team">The Team</a>
+      <a href="#services">Services</a>
       <a href="#work">Our Work</a>
-      <a href="learnsphere.html">LearnSphere ↗</a>
-      <a href="#approach">Approach</a>
-      <a class="nav-contact" href="#contact">Get in touch <span>↗</span></a>
+      <a href="#team">The Team</a>
+      <a href="#contact">Contact ↗</a>
     </nav>
-
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-
-    <section class="hero section-wrap" id="home">
-
-      <div class="hero-copy">
-
-        <div class="eyebrow">
-          <span class="eyebrow-line"></span>
-          STUDENT-LED DEVELOPMENT TEAM
-        </div>
-
-        <h1>
-          Two minds.<br>
-          <span class="gold-text">One vision.</span><br>
-          Meaningful technology.
-        </h1>
-
-        <p class="hero-description">
-          We turn ideas into practical digital experiences
-          through thoughtful design, continuous learning
-          and purposeful development.
-        </p>
-
-        <div class="hero-actions">
-
-          <a class="button button-primary" href="#work">
-            Explore our work <span>↗</span>
-          </a>
-
-          <a class="text-link" href="#team">
-            Meet the team <span>↓</span>
-          </a>
-
-        </div>
-
-        <div class="hero-footnote">
-          <span class="status-dot"></span>
-          Building, learning and improving — one step at a time.
-        </div>
-
-      </div>
-
-      <div class="hero-art hero-brand-art">
-        <img
-          src="assets/nexus-brand-artwork.png"
-          alt="NEXUS Studio official brand artwork"
-          class="brand-artwork"
-        >
-      </div>
-
-    </section>
-
-    <!-- FOCUS TICKER -->
-
-    <section class="ticker" aria-label="Our focus">
-      <div class="ticker-track">
-        <span>PRODUCT THINKING</span><i>✳</i>
-        <span>APPLICATION DEVELOPMENT</span><i>✳</i>
-        <span>USER-FOCUSED DESIGN</span><i>✳</i>
-        <span>CONTINUOUS IMPROVEMENT</span><i>✳</i>
-        <span>PRODUCT THINKING</span><i>✳</i>
-        <span>APPLICATION DEVELOPMENT</span><i>✳</i>
-        <span>USER-FOCUSED DESIGN</span><i>✳</i>
-        <span>CONTINUOUS IMPROVEMENT</span><i>✳</i>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-
-    <section class="section section-wrap about-section" id="about">
-
-      <div class="section-kicker">01 — WHO WE ARE</div>
-
-      <div class="about-grid">
-
-        <h2>
-          Small team.<br>
-          <span class="muted-heading">Considered ideas.</span><br>
-          Real progress.
-        </h2>
-
-        <div class="about-copy">
-
-          <p class="lead">
-            NEXUS Studio is a student-led development team
-            working to turn ideas into practical digital solutions.
-          </p>
-
-          <p>
-            Through LearnSphere, we explore application development,
-            user-focused design, problem-solving and continuous
-            improvement. The goal is simple: learn by building,
-            improve through feedback and create technology
-            that serves a meaningful purpose.
-          </p>
-
-          <a class="underlined-link" href="#approach">
-            How we work <span>↗</span>
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="principle-row">
-
-        <div>
-          <span class="principle-number">01</span>
-          <strong>Curiosity</strong>
-          <small>Ask better questions.</small>
-        </div>
-
-        <div>
-          <span class="principle-number">02</span>
-          <strong>Clarity</strong>
-          <small>Keep the user in focus.</small>
-        </div>
-
-        <div>
-          <span class="principle-number">03</span>
-          <strong>Consistency</strong>
-          <small>Make progress every day.</small>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- TEAM -->
-
-    <section class="section team-section" id="team">
-
-      <div class="section-wrap">
-
-        <div class="section-heading">
-
-          <div>
-            <div class="section-kicker">02 — THE PEOPLE</div>
-            <h2>Meet the <span class="gold-text">team.</span></h2>
-          </div>
-
-          <p>
-            Different strengths, shared direction.<br>
-            Working together to make ideas useful.
-          </p>
-
-        </div>
-
-        <div class="team-grid">
-
-          <article class="team-card">
-
-            <div class="portrait portrait-rahul">
-
-              <img
-                src="assets/rahul-selvam.jpg"
-                alt="Rahul Selvam"
-                class="team-photo"
-              >
-
-              <div class="portrait-corner">N / 01</div>
-
-            </div>
-
-            <div class="team-meta">
-              <span>FOUNDER</span>
-              <span>PRODUCT · DEVELOPMENT</span>
-            </div>
-
-            <h3>Rahul Selvam</h3>
-
-            <p>
-              Building ideas into useful technology. Rahul leads
-              product direction and development, with an interest
-              in software engineering, application development
-              and product creation.
-            </p>
-
-            <div class="team-belief">
-              “Good software grows from curiosity, thoughtful
-              design and attention to users.”
-            </div>
-
-            <a
-              class="underlined-link"
-              href="index.html"
-            >
-              Founder profile <span>↗</span>
-            </a>
-
-          </article>
-
-          <article class="team-card">
-
-            <div class="portrait portrait-anusha">
-
-              <img
-                src="assets/anusha.jpg"
-                alt="Anusha"
-                class="team-photo"
-              >
-
-              <div class="portrait-corner">N / 02</div>
-
-            </div>
-
-            <div class="team-meta">
-              <span>CO-DEVELOPER</span>
-              <span>COLLABORATION · IDEAS</span>
-            </div>
-
-            <h3>Anusha</h3>
-
-            <p>
-              A student developer interested in technology,
-              creative problem-solving and useful digital
-              experiences. Anusha collaborates on development
-              and helps shape the product through exploration
-              and feedback.
-            </p>
-
-            <div class="team-belief">
-              “Successful applications begin with understanding
-              people and improving through feedback.”
-            </div>
-
-          </article>
-
-        </div>
-
-        <p class="team-note">
-          A student collaboration at Don Bosco Degree College.
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- OUR WORK -->
-
-    <section class="section section-wrap work-section" id="work">
-
-      <div class="section-heading">
-
-        <div>
-          <div class="section-kicker">03 — WHAT WE'RE BUILDING</div>
-          <h2>Ideas in <span class="gold-text">progress.</span></h2>
-        </div>
-
-        <span class="project-status">
-          <span class="status-dot"></span>
-          IN DEVELOPMENT
-        </span>
-
-      </div>
-
-      <article class="project-card">
-
-        <div class="project-copy">
-
-          <div class="project-index">FEATURED PROJECT / 001</div>
-
-          <a class="project-brand" href="learnsphere.html">
-            <span class="project-icon">L</span>
-            <span>LearnSphere ↗</span>
-          </a>
-
-          <h3>
-            A more connected<br>
-            learning experience.
-          </h3>
-
-          <p>
-            LearnSphere is an educational application in development,
-            shaped around student needs and practical digital tools.
-            It is our space to learn, experiment and turn product
-            ideas into a working experience.
-          </p>
-
-          <div class="tag-list">
-            <span>Android</span>
-            <span>Kotlin</span>
-            <span>Jetpack Compose</span>
-            <span>Firebase</span>
-          </div>
-
-          <a class="underlined-link" href="learnsphere.html">
-            Explore LearnSphere <span>↗</span>
-          </a>
-
-        </div>
-
-        <div class="project-visual project-screens">
-
-          <div class="screen-frame">
-            <img
-              src="assets/learnsphere-home.png"
-              alt="LearnSphere student home screen"
-            >
-          </div>
-
-          <div class="screen-frame">
-            <img
-              src="assets/learnsphere-toolkit.png"
-              alt="LearnSphere student toolkit screen"
-            >
-          </div>
-
-          <div class="visual-caption">
-            LEARNSPHERE — CURRENT APP PREVIEW
-          </div>
-
-        </div>
-
-      </article>
-
-    </section>
-
-    <!-- APPROACH -->
-
-    <section class="section approach-section" id="approach">
-
-      <div class="section-wrap">
-
-        <div class="section-kicker">04 — HOW WE WORK</div>
-
-        <div class="approach-heading">
-
-          <h2>
-            Progress is a <span class="gold-text">process.</span>
-          </h2>
-
-          <p>
-            We believe meaningful products come from a cycle
-            of listening, making and learning.
-          </p>
-
-        </div>
-
-        <div class="process-grid">
-
-          <div class="process-step">
-            <span>01</span>
-            <div class="process-symbol">⌕</div>
-            <h3>Discover</h3>
-            <p>Understand the need and ask the right questions.</p>
-          </div>
-
-          <div class="process-step">
-            <span>02</span>
-            <div class="process-symbol">⌑</div>
-            <h3>Plan</h3>
-            <p>Give the idea structure and a clear direction.</p>
-          </div>
-
-          <div class="process-step">
-            <span>03</span>
-            <div class="process-symbol">◇</div>
-            <h3>Design</h3>
-            <p>Shape a focused, user-friendly experience.</p>
-          </div>
-
-          <div class="process-step">
-            <span>04</span>
-            <div class="process-symbol">⌘</div>
-            <h3>Develop</h3>
-            <p>Build thoughtfully and keep learning.</p>
-          </div>
-
-          <div class="process-step">
-            <span>05</span>
-            <div class="process-symbol">✓</div>
-            <h3>Test</h3>
-            <p>Review what works and find what needs care.</p>
-          </div>
-
-          <div class="process-step">
-            <span>06</span>
-            <div class="process-symbol">↗</div>
-            <h3>Improve</h3>
-            <p>Use feedback to make the next version better.</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- VALUES -->
-
-    <section class="section section-wrap values-section">
-
-      <div class="values-panel">
-
-        <div class="section-kicker">05 — WHAT GUIDES US</div>
-
-        <h2>
-          Technology with<br>
-          <span class="gold-text">intention.</span>
-        </h2>
-
-        <div class="values-list">
-
-          <div>
-            <span>01</span>
-            <p>
-              <strong>Useful over complicated.</strong><br>
-              We value solutions that make a real task easier.
-            </p>
-          </div>
-
-          <div>
-            <span>02</span>
-            <p>
-              <strong>Learning over assumptions.</strong><br>
-              We stay open to feedback and new perspectives.
-            </p>
-          </div>
-
-          <div>
-            <span>03</span>
-            <p>
-              <strong>Progress over perfection.</strong><br>
-              We build, review and improve with purpose.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="values-aside">
-        <div class="big-quote">“</div>
-        <p>
-          Meaningful technology starts with a meaningful
-          reason to build.
-        </p>
-        <span>THE NEXUS MINDSET</span>
-      </div>
-
-    </section>
-
-    <!-- COLLEGE -->
-
-    <section class="college-band">
-
-      <div class="section-wrap college-inner">
-
-        <div class="college-mark">DB</div>
-
-        <div>
-          <div class="section-kicker">OUR LEARNING COMMUNITY</div>
-          <h2>Don Bosco Degree College</h2>
-          <p>Where ideas, learning and collaboration come together.</p>
-        </div>
-
-        <span class="college-side">
-          STUDENT-LED<br>
-          CREATIVE WORK
-        </span>
-
-      </div>
-
-    </section>
-
-    <!-- CONTACT -->
-
-    <section class="section section-wrap contact-section" id="contact">
-
-      <div class="section-kicker">06 — START A CONVERSATION</div>
-
-      <div class="contact-grid">
-
-        <div>
-
-          <h2>
-            Have an idea?<br>
-            <span class="gold-text">Let's connect.</span>
-          </h2>
-
-          <p>
-            For project conversations, collaboration or
-            thoughtful feedback, reach out to NEXUS Studio.
-          </p>
-
-        </div>
-
-        <div class="contact-card">
-
-          <span class="contact-label">TEAM EMAIL</span>
-
-          <a href="mailto:nexusstudio0809@gmail.com">
-            nexusstudio0809@gmail.com <span>↗</span>
-          </a>
-
-          <small>
-            We welcome constructive conversations and ideas.
-          </small>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer class="site-footer">
-
-    <div class="section-wrap footer-inner">
-
-      <a class="brand" href="#home">
-        <img
-          src="assets/nexus-mark-crop.jpg"
-          alt=""
-          class="brand-mark"
-        >
-        <span>NEXUS<span class="brand-light">STUDIO</span></span>
-      </a>
-
-      <span class="footer-tagline">
-        Two minds. One vision. Meaningful technology.
-      </span>
-
-      <a href="index.html" class="footer-tagline">
-        Rahul Selvam — Founder ↗
-      </a>
-
-      <span class="copyright">
-        © <span id="year"></span> NEXUS Studio
-      </span>
-
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container reveal">
+    <div class="eyebrow">Student-led development studio</div>
+
+    <h1>
+      Ideas become<br>
+      <span>meaningful</span><br>
+      technology.
+    </h1>
+
+    <p class="hero-text">
+      We are NEXUS Studio. We explore technology, develop digital ideas
+      and create thoughtful experiences through learning, creativity
+      and continuous improvement.
+    </p>
+
+    <div class="buttons">
+      <a href="#work" class="btn btn-primary">Explore our work ↗</a>
+      <a href="#about" class="btn btn-outline">Discover NEXUS</a>
     </div>
 
-  </footer>
+    <div class="hero-note">
+      THINK · DESIGN · DEVELOP · IMPROVE
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <div class="section-label">01 — WHO WE ARE</div>
+      <h2 class="section-title">Small team.<br>Considered ideas.<br>Real progress.</h2>
+      <p class="section-description">
+        NEXUS Studio is a student-led development team exploring
+        application development, user-focused design and practical
+        digital solutions.
+      </p>
+    </div>
+
+    <div class="about-card reveal">
+      <div class="big">
+        Technology with<br>
+        <span>thought and purpose.</span>
+      </div>
+      <p>
+        We believe in learning by building, improving through feedback
+        and creating experiences that solve meaningful problems.
+        Every idea is an opportunity to learn something new.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">02 — WHAT WE EXPLORE</div>
+    <h2 class="section-title">Turning curiosity<br>into digital experiences.</h2>
+    <p class="section-description">
+      Our areas of focus as we learn, experiment and develop.
+    </p>
+
+    <div class="services-grid">
+      <article class="service reveal">
+        <span class="service-number">01 / DEVELOPMENT</span>
+        <h3>App Development</h3>
+        <p>Exploring application development and useful digital products.</p>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-number">02 / DESIGN</span>
+        <h3>UI & UX Design</h3>
+        <p>Creating clear, accessible and user-focused digital interfaces.</p>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-number">03 / INNOVATION</span>
+        <h3>Creative Technology</h3>
+        <p>Experimenting with ideas and emerging technologies.</p>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-number">04 / LEARNING</span>
+        <h3>AI Exploration</h3>
+        <p>Learning how artificial intelligence can support useful experiences.</p>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-number">05 / THINKING</span>
+        <h3>Problem Solving</h3>
+        <p>Understanding challenges and exploring practical solutions.</p>
+      </article>
+
+      <article class="service reveal">
+        <span class="service-number">06 / PROGRESS</span>
+        <h3>Continuous Learning</h3>
+        <p>Improving our skills through practice, feedback and collaboration.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <div class="section-label">03 — SELECTED PROJECT</div>
+    <h2 class="section-title">Ideas we're bringing to life.</h2>
+
+    <div class="project reveal">
+      <div class="project-art">
+        <div>LS.</div>
+      </div>
+
+      <div class="project-content">
+        <div class="project-tag">EDTECH · IN DEVELOPMENT</div>
+        <h3>LearnSphere</h3>
+        <p>
+          An educational app concept focused on making learning
+          more organised, interactive and accessible for students.
+          We are exploring AI-assisted study tools, notes, quizzes
+          and coding learning experiences.
+        </p>
+        <a href="learnsphere.html" class="btn btn-primary">
+          Explore LearnSphere ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROCESS -->
+<section id="approach">
+  <div class="container">
+    <div class="section-label">04 — OUR APPROACH</div>
+    <h2 class="section-title">A simple process.<br>A thoughtful mindset.</h2>
+
+    <div class="process-grid">
+      <article class="process-item reveal">
+        <span>01 — CURIOSITY</span>
+        <h3>Ask better questions.</h3>
+        <p>Understand the problem before searching for solutions.</p>
+      </article>
+
+      <article class="process-item reveal">
+        <span>02 — CLARITY</span>
+        <h3>Keep the user in focus.</h3>
+        <p>Think about the people who will use what we create.</p>
+      </article>
+
+      <article class="process-item reveal">
+        <span>03 — CONSISTENCY</span>
+        <h3>Improve every day.</h3>
+        <p>Learn, build, review and make steady progress.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="section-label">05 — THE PEOPLE</div>
+    <h2 class="section-title">Meet the team.</h2>
+    <p class="section-description">
+      A small team connected by curiosity, creativity and a shared vision.
+    </p>
+
+    <div class="team-grid">
+      <article class="team-card reveal">
+        <div class="team-initial">R</div>
+        <h3>Rahul Selvam</h3>
+        <div class="role">FOUNDER · DEVELOPMENT</div>
+        <p>
+          Interested in application development, technology,
+          product ideas and building useful digital experiences.
+        </p>
+        <p><a href="index.html">View founder profile ↗</a></p>
+      </article>
+
+      <article class="team-card reveal">
+        <div class="team-initial">A</div>
+        <h3>Anusha</h3>
+        <div class="role">CO-DEVELOPER</div>
+        <p>
+          Part of the NEXUS journey, contributing to the team's
+          learning, ideas and development efforts.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact reveal">
+      <div class="section-label">06 — LET'S CONNECT</div>
+      <h2>Every meaningful idea<br>starts somewhere.</h2>
+      <p>
+        Follow our journey as we learn, experiment and build
+        thoughtful digital experiences.
+      </p>
+      <a class="btn btn-primary" href="mailto:nexusstudio0809@gmail.com">
+        Get in touch ↗
+      </a>
+      <a class="email" href="mailto:nexusstudio0809@gmail.com">
+        nexusstudio0809@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <a class="logo" href="#home">NEXUS<span>.</span></a>
+    <p>Building, learning and improving — one step at a time.</p>
+    <p>© <span id="year"></span> NEXUS Studio</p>
+    <p><a href="index.html">Rahul Selvam · Founder</a></p>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+</script>
 
 </body>
 </html>
