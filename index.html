@@ -7,7 +7,6 @@
 <meta name="theme-color" content="#080b18">
 
 <title>Rahul Selvam | Founder & Technology Builder</title>
-
 <meta name="description" content="Official portfolio of Rahul Selvam, founder building LearnSphere and Nexus Studio.">
 
 <style>
@@ -267,6 +266,30 @@ section {
   box-shadow: 0 15px 40px #0004;
 }
 
+/* CLICKABLE BRAND CARDS */
+
+.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-link:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 5px;
+}
+
+.card-link h3 {
+  color: #c4b5fd;
+}
+
+.card-link .explore-link {
+  margin-top: 18px;
+  color: #c4b5fd;
+  font-weight: bold;
+}
+
 .card-icon {
   font-size: 35px;
   margin-bottom: 15px;
@@ -516,7 +539,7 @@ footer span {
   </div>
 </section>
 
-<!-- MY BRANDS -->
+<!-- MY BRANDS: BOTH CARDS ARE CLICKABLE -->
 
 <section class="dark-section" id="brands">
   <div class="container">
@@ -532,7 +555,10 @@ footer span {
 
     <div class="cards">
 
-      <article class="card">
+      <!-- LEARNSPHERE CARD -->
+      <a href="learnsphere.html" class="card card-link"
+         aria-label="Explore LearnSphere">
+
         <div class="card-icon">🎓</div>
 
         <h3>LearnSphere</h3>
@@ -546,9 +572,17 @@ footer span {
         <span class="card-label">
           EDTECH · IN DEVELOPMENT
         </span>
-      </article>
 
-      <article class="card">
+        <p class="explore-link">
+          Explore LearnSphere →
+        </p>
+
+      </a>
+
+      <!-- NEXUS STUDIO CARD -->
+      <a href="nexus-studio.html" class="card card-link"
+         aria-label="Explore Nexus Studio">
+
         <div class="card-icon">🚀</div>
 
         <h3>Nexus Studio</h3>
@@ -562,7 +596,12 @@ footer span {
         <span class="card-label">
           SOFTWARE · IN DEVELOPMENT
         </span>
-      </article>
+
+        <p class="explore-link">
+          Explore Nexus Studio →
+        </p>
+
+      </a>
 
     </div>
 
