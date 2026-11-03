@@ -4,93 +4,668 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Official website of Rahul Selvam, founder of LearnSphere and Nexus Studio.">
-<meta name="author" content="Rahul Selvam">
-<title>Rahul Selvam | Founder & Technology Builder</title>
+
+<title>Rahul Selvam | Founder & Technology Entrepreneur</title>
+
+<meta name="description" content="Official website of Rahul Selvam, founder of LearnSphere and Nexus Studio. Computer Science student and aspiring technology entrepreneur.">
+<meta name="theme-color" content="#080b18">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#080d18;color:#f5f7ff;line-height:1.7}
-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 8%;position:sticky;top:0;background:#080d18ee;backdrop-filter:blur(12px);z-index:5}
-.logo{font-size:24px;font-weight:800;color:#7c9cff}
-nav a{color:#c8d2e9;text-decoration:none;margin-left:20px;font-size:14px}
-.hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding:90px 10%;background:radial-gradient(ellipse at 80% 20%,#233d7955,transparent 50%)}
-.tag{color:#91aaff;letter-spacing:3px;font-size:12px;font-weight:bold}
-h1{font-size:clamp(48px,9vw,86px);line-height:1.1;margin:20px 0}
-h1 span{color:#8ca6ff}
-.hero p{max-width:620px;color:#bac5db;font-size:18px}
-.actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
-.btn{padding:12px 22px;border-radius:9px;text-decoration:none;font-weight:bold;background:#7795ff;color:#071020}
-.btn.secondary{background:transparent;border:1px solid #63728f;color:white}
-section{padding:85px 10%}
-.section-title{font-size:34px;margin-bottom:12px}
-.sub{color:#aab6cc;margin-bottom:35px}
-.about{max-width:760px;color:#c5cde0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.card{background:#111a2c;border:1px solid #26334c;border-radius:16px;padding:30px;transition:.2s}
-.card:hover{transform:translateY(-5px);border-color:#7895ff}
-.card h3{font-size:23px;margin:12px 0}
-.card p{color:#abb8cf}
-.symbol{font-size:34px}
-.card a{display:inline-block;margin-top:18px;color:#9cb2ff;text-decoration:none}
-.contact{text-align:center;background:#101a2b}
-footer{text-align:center;padding:25px;color:#8290aa;border-top:1px solid #253047;font-size:13px}
-@media(max-width:600px){nav{padding:16px 5%}nav a{margin-left:9px;font-size:12px}.hero{padding:75px 7%}section{padding:65px 7%}}
+:root {
+  --bg: #080b18;
+  --surface: #11172b;
+  --surface2: #171d35;
+  --primary: #a78bfa;
+  --secondary: #c4b5fd;
+  --text: #f5f5ff;
+  --muted: #aeb5cf;
+  --border: #29314e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 84%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,11,24,.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  width: 88%;
+  max-width: 1250px;
+  margin: auto;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 27px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 90px 20px;
+  background:
+    radial-gradient(ellipse at 50% 30%, #422276 0%, #17152f 35%, #080b18 75%);
+  position: relative;
+}
+
+.hero-content {
+  max-width: 850px;
+  animation: appear 1s ease;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 19px;
+  border: 1px solid #7560b5;
+  border-radius: 30px;
+  color: var(--secondary);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 8vw, 82px);
+  line-height: 1.1;
+  margin: 28px 0;
+  letter-spacing: -2px;
+}
+
+.gradient {
+  background: linear-gradient(90deg,#a78bfa,#e0b5ff,#818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 690px;
+  margin: auto;
+  color: #c6c9dc;
+  font-size: 18px;
+}
+
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  border-radius: 9px;
+  background: linear-gradient(100deg,#7651e8,#a855f7);
+  color: white;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #8055e955;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #8b78c8;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 90px 0;
+}
+
+.section-title {
+  font-size: clamp(30px,5vw,42px);
+  margin-bottom: 14px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  max-width: 700px;
+  font-size: 16px;
+}
+
+.purple {
+  color: var(--primary);
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 35px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+.about-box {
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.about-box h3 {
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.about-box p {
+  color: var(--muted);
+}
+
+/* SKILLS */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.skills span {
+  background: #17172f;
+  border: 1px solid #514579;
+  color: #d7caff;
+  padding: 9px 17px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+/* BRANDS */
+
+.dark-section {
+  background: #0d1122;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 30px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 40px #0004;
+}
+
+.card-icon {
+  font-size: 34px;
+  margin-bottom: 17px;
+}
+
+.card h3 {
+  font-size: 23px;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.card-label {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #c4b5fd;
+  border: 1px solid #514579;
+  border-radius: 20px;
+  padding: 5px 12px;
+}
+
+/* PROJECTS */
+
+.project-card {
+  min-height: 210px;
+}
+
+/* VISION */
+
+.vision {
+  text-align: center;
+  background: radial-gradient(ellipse at center,#241a47,#080b18 70%);
+}
+
+.vision p {
+  max-width: 780px;
+  margin: 20px auto 0;
+  font-size: 19px;
+  color: #c6c9dc;
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+}
+
+.contact .section-subtitle {
+  margin: auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.social-links a {
+  padding: 11px 19px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--secondary);
+  transition: .3s;
+}
+
+.social-links a:hover {
+  background: var(--surface2);
+  border-color: var(--primary);
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 27px 15px;
+  text-align: center;
+  color: #929bb7;
+  font-size: 13px;
+}
+
+footer span {
+  color: var(--primary);
+}
+
+/* ANIMATION */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:750px) {
+  .nav-inner {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
+}
 </style>
 </head>
+
 <body>
+
+<!-- NAVIGATION -->
+
 <nav>
-<div class="logo">RS.</div>
-<div>
-<a href="#about">About</a>
-<a href="#brands">Brands</a>
-<a href="#contact">Contact</a>
-</div>
+  <div class="nav-inner">
+    <a href="#home" class="logo">RAHUL SELVAM.</a>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#brands">Brands</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
 
-<header class="hero">
-<div class="tag">FOUNDER • TECHNOLOGY BUILDER</div>
-<h1>Rahul <span>Selvam.</span></h1>
-<p>Building ideas into technology. Founder of LearnSphere and Nexus Studio, exploring educational technology, software and digital innovation.</p>
-<div class="actions">
-<a class="btn" href="#brands">Explore My Brands ↗</a>
-<a class="btn secondary" href="#about">Discover My Story</a>
-</div>
+<!-- HERO -->
+
+<header class="hero" id="home">
+  <div class="hero-content">
+
+    <span class="tag">STUDENT ENTREPRENEUR · TECHNOLOGY BUILDER</span>
+
+    <h1>
+      Building Ideas<br>
+      Into <span class="gradient">Technology.</span>
+    </h1>
+
+    <p>
+      I'm Rahul Selvam — an aspiring technology entrepreneur
+      and Computer Science student building ideas in educational
+      technology, software development and digital innovation.
+    </p>
+
+    <div class="buttons">
+      <a href="#brands" class="btn">Explore My Brands →</a>
+      <a href="#about" class="btn btn-outline">Discover My Story</a>
+    </div>
+
+  </div>
 </header>
 
+<!-- ABOUT -->
+
 <section id="about">
-<div class="tag">MY STORY</div>
-<h2 class="section-title">About Me</h2>
-<p class="about">I'm Rahul Selvam, an aspiring technology entrepreneur and founder building digital products with a focus on education and software development. My journey is driven by curiosity, creativity and the ambition to turn meaningful ideas into useful technology.</p>
+  <div class="container">
+
+    <h2 class="section-title">About <span class="purple">Me</span></h2>
+
+    <div class="about-grid">
+
+      <div class="about-text">
+        <p>
+          I'm Rahul Selvam, a Computer Science student with an
+          interest in technology, programming, software development
+          and entrepreneurship.
+        </p>
+
+        <p>
+          I believe every meaningful digital product begins with an
+          idea, curiosity and the willingness to learn. I'm working
+          towards turning ideas into practical technology products
+          that can create value for people.
+        </p>
+
+        <p>
+          Through LearnSphere and Nexus Studio, I'm exploring
+          educational technology and software product development.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>My Focus</h3>
+        <p>Technology</p>
+        <p>Education</p>
+        <p>Software Development</p>
+        <p>Creative Innovation</p>
+        <p>Continuous Learning</p>
+      </div>
+
+    </div>
+
+    <h3 style="margin-top:45px">Technical Interests</h3>
+
+    <div class="skills">
+      <span>Python</span>
+      <span>Java</span>
+      <span>MySQL</span>
+      <span>DBMS</span>
+      <span>Data Structures</span>
+      <span>Android Development</span>
+      <span>HTML & CSS</span>
+      <span>Artificial Intelligence</span>
+      <span>Software Development</span>
+    </div>
+
+  </div>
 </section>
 
-<section id="brands">
-<div class="tag">WHAT I'M BUILDING</div>
-<h2 class="section-title">My Brands</h2>
-<p class="sub">Two brands. One vision. A journey of innovation.</p>
-<div class="cards">
-<div class="card">
-<div class="symbol">🎓</div>
-<h3>LearnSphere</h3>
-<p>An educational technology app in development, focused on making learning smarter, more accessible and engaging for students.</p>
-<a href="https://www.instagram.com/" target="_blank" rel="noopener">Discover LearnSphere ↗</a>
-</div>
-<div class="card">
-<div class="symbol">⌘</div>
-<h3>Nexus Studio</h3>
-<p>An app development and software studio being built to turn creative ideas into useful digital products and technology solutions.</p>
-<a href="https://www.instagram.com/" target="_blank" rel="noopener">Discover Nexus Studio ↗</a>
-</div>
-</div>
+<!-- BRANDS -->
+
+<section class="dark-section" id="brands">
+  <div class="container">
+
+    <h2 class="section-title">My <span class="purple">Brands</span></h2>
+
+    <p class="section-subtitle">
+      Building ideas with a vision to create useful digital
+      experiences through education and technology.
+    </p>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-icon">🎓</div>
+
+        <h3>LearnSphere</h3>
+
+        <p>
+          An educational technology platform in development,
+          focused on making learning more accessible, engaging
+          and effective for students.
+        </p>
+
+        <span class="card-label">EDTECH · IN DEVELOPMENT</span>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🚀</div>
+
+        <h3>Nexus Studio</h3>
+
+        <p>
+          A software and app development studio in development,
+          exploring creative ideas, digital products and
+          innovative technology solutions.
+        </p>
+
+        <span class="card-label">SOFTWARE · IN DEVELOPMENT</span>
+      </article>
+
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="contact">
-<div class="tag">LET'S CONNECT</div>
-<h2 class="section-title">Have an idea?</h2>
-<p class="sub">Let's connect, collaborate and build something meaningful.</p>
-<a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+<!-- PROJECTS -->
+
+<section id="projects">
+  <div class="container">
+
+    <h2 class="section-title">My <span class="purple">Projects</span></h2>
+
+    <p class="section-subtitle">
+      Exploring technology by learning, experimenting and
+      building practical digital projects.
+    </p>
+
+    <div class="cards">
+
+      <article class="card project-card">
+        <div class="card-icon">📱</div>
+        <h3>StudentHub</h3>
+        <p>
+          A student-focused Android application project
+          exploring digital study support and AI-powered
+          learning assistance.
+        </p>
+      </article>
+
+      <article class="card project-card">
+        <div class="card-icon">🤖</div>
+        <h3>AI Learning Tools</h3>
+        <p>
+          Exploring artificial intelligence features that
+          can help students understand concepts and learn
+          more effectively.
+        </p>
+      </article>
+
+      <article class="card project-card">
+        <div class="card-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>
+          Creating and improving web experiences while
+          developing practical programming and design skills.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
 </section>
 
-<footer>© 2026 Rahul Selvam. All rights reserved.</footer>
+<!-- VISION -->
+
+<section class="vision">
+  <div class="container">
+
+    <h2 class="section-title">My <span class="purple">Vision</span></h2>
+
+    <p>
+      To combine technology, creativity and continuous learning
+      to build meaningful digital products, support students
+      and explore solutions to real-world problems.
+    </p>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+  <div class="container">
+
+    <h2 class="section-title">Let's <span class="purple">Connect</span></h2>
+
+    <p class="section-subtitle">
+      Interested in technology, educational innovation or
+      creative digital ideas? Find me through my platforms.
+    </p>
+
+    <div class="social-links">
+
+      <a href="https://github.com/rahulselvam83-collab"
+         target="_blank" rel="noopener noreferrer">
+        GitHub ↗
+      </a>
+
+      <!-- Replace these links with your real profile URLs -->
+      <a href="https://www.linkedin.com/"
+         target="_blank" rel="noopener noreferrer">
+        LinkedIn ↗
+      </a>
+
+      <a href="https://www.instagram.com/"
+         target="_blank" rel="noopener noreferrer">
+        Instagram ↗
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 <span>Rahul Selvam</span>. All rights reserved.</p>
+  <p>Building Ideas Into Technology.</p>
+</footer>
+
 </body>
 </html>
