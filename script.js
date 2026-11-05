@@ -1,0 +1,14 @@
+const $=s=>document.querySelector(s);
+$("#year").textContent=new Date().getFullYear();
+const nav=$("#mainNav"),toggle=$("#menuToggle");
+toggle.addEventListener("click",()=>nav.classList.toggle("open"));
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+const panel=$("#assistantPanel"),assistant=$("#assistantButton");
+assistant.addEventListener("click",()=>panel.classList.toggle("open"));
+$("#closeAssistant").addEventListener("click",()=>panel.classList.remove("open"));
+panel.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>panel.classList.remove("open")));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+const links=[...nav.querySelectorAll("a")],sections=links.map(a=>document.querySelector(a.getAttribute("href"))).filter(Boolean);
+const spy=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id))}}),{rootMargin:"-35% 0px -55% 0px"});
+sections.forEach(s=>spy.observe(s));
